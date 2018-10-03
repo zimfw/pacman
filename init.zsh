@@ -2,7 +2,6 @@
 # Pacman aliases
 #
 
-# ${zpacman_frontend} is provided by either .zimrc or (if not set) init.zsh
 # The zpacman_frontend is _only_ used for package installs.
 
 #
@@ -14,17 +13,16 @@ if (( ! ${+commands[pacman]} )); then
   return 1
 fi
 
-local zpacman_frontend_priv helper
+local zpacman_frontend zpacman_frontend_priv helper
 
-if (( ! ${+zpacman_frontend} )); then
+if ! zstyle -s ':zim:pacman' frontend 'zpacman_frontend'; then
   zpacman_frontend='pacman'
   zpacman_frontend_priv='sudo pacman'
 elif (( ! ${+commands[${zpacman_frontend}]} )); then
-  print "pacman frontend \"${zpacman_frontend}\" is invalid or not installed. Reverting to \"pacman\".
-You can fix this error by editing the 'zpacman_frontend' variable in your .zimrc" >&2
+  print "pacman frontend \"${zpacman_frontend}\" is invalid or not installed. Reverting to \"pacman\"." >&2
   zpacman_frontend='pacman'
   zpacman_frontend_priv='sudo pacman'
-elif [[ ${zpacman_frontend} == ("yaourt"|"pacaur"|"yay") ]]; then
+elif [[ ${zpacman_frontend} == (pacaur|yaourt|yay) ]]; then
   # those AUR helpers handle SUID themselves
   zpacman_frontend_priv="${zpacman_frontend}"
 else
@@ -126,7 +124,9 @@ alias pacblame="${zpacman_frontend} -Qo"
 #
 
 # source helper functions/aliases
-for helper in ${zpacman_helper[@]}; do
+local -a zpacman_helpers
+zstyle -a ':zim:pacman' helpers 'zpacman_helpers'
+for helper in ${zpacman_helpers}; do
   if [[ -s ${0:h}/helper_${helper}.zsh ]]; then
     source ${0:h}/helper_${helper}.zsh
   else

@@ -1,14 +1,19 @@
-Pacman
+pacman
 ======
 
 Adds aliases for the pacman package manager.
 
 Also includes optional helper(s).
 
-.zimrc Configuration
--------------
-  * `zpacman_frontend='helper_here'` Set helper_here to a wrapper if applicable (powerpill, pacmatic, etc).
-  * `zpacman_helper=(aur)` add/remove any helper scripts to be loaded here.
+Settings
+--------
+Set `wrapper_here` to a wrapper if applicable (powerpill, pacmatic, etc):
+
+    zstyle ':zim:pacman' frontend 'wrapper_here'
+
+Add any helper scripts to be loaded:
+
+    zstyle ':zim:pacman' helpers 'aur'
 
 Helpers
 -------
