@@ -22,7 +22,7 @@ elif (( ! ${+commands[${zpacman_frontend}]} )); then
   print "pacman frontend \"${zpacman_frontend}\" is invalid or not installed. Reverting to \"pacman\"." >&2
   zpacman_frontend='pacman'
   zpacman_frontend_priv='sudo pacman'
-elif [[ ${zpacman_frontend} == (pacaur|yaourt|yay) ]]; then
+elif [[ ${zpacman_frontend} == (pacaur|pikaur|yaourt|yay) ]]; then
   # those AUR helpers handle SUID themselves
   zpacman_frontend_priv="${zpacman_frontend}"
 else
