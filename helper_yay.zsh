@@ -6,14 +6,8 @@
 # General
 #
 
-alias yay=yay
-
-#
-# Build
-#
-
-# build package in current directory, cleanup, and install
-alias yayb='makepkg -sci'
+# Print current yay configuration
+alias yconf="yay -Pg"
 
 #
 # Install
@@ -22,19 +16,19 @@ alias yayb='makepkg -sci'
 #NOTE: Installing/upgrading individual packages is NOT supported. Sync and upgrade ALL on install.
 
 # install, sync, and upgrade packages
-alias yayi="sudo yay -Syu"
+alias yi="yay -Syu"
 
 # install packages without syncing
-alias yayI="sudo yay -S"
+alias yI="yay -S"
 
 # install, sync, and upgrade packages (forcibly refresh package lists)
-alias yayu="sudo yay -Syyu"
+alias yu="yay -Syyu"
 
 # install packages by filename
-alias yayU="sudo yay -U"
+alias yU="yay -U"
 
 # install all packages in current directory
-alias yayd="sudo yay -U *.pkg.*"
+alias yd="yay -U *.pkg.*"
 
 
 #
@@ -42,10 +36,10 @@ alias yayd="sudo yay -U *.pkg.*"
 #
 
 # remove package and unneeded dependencies
-alias yayr="sudo yay -R"
+alias yr="yay -R"
 
 # remove package, unneeded dependencies, and configuration files
-alias yayrm="sudo yay -Rns"
+alias yrm="yay -Rns"
 
 
 #
@@ -53,10 +47,10 @@ alias yayrm="sudo yay -Rns"
 #
 
 # query package information from the remote repository
-alias yayq="yay -Si"
+alias yq="yay -Si"
 
 # query package information from the local repository
-alias yayQ="yay -Qi"
+alias yQ="yay -Qi"
 
 
 #
@@ -64,10 +58,10 @@ alias yayQ="yay -Qi"
 #
 
 # search for package in the remote repository
-alias yays="yay -Ss"
+alias ys="yay -Ss"
 
 # search for the package in the local repository
-alias yayS="yay -Qs"
+alias yS="yay -Qs"
 
 
 #
@@ -75,28 +69,17 @@ alias yayS="yay -Qs"
 #
 
 # list orphan packages
-alias yayol="yay -Qdt"
+alias yol="yay -Qdt"
 
 # remove orphan packages
-alias yayor="sudo yay -Rns \$(yay -Qtdq)"
-
-#
-#Database
-#
-
-#mark packages as explicitly installed
-alias yaypexp="sudo yay -D --asexplicit"
-
-#mark packages as non-explicitly installed or dependency
-alias yaypdep="sudo yay -D --asedps"
-
+alias yor="yay -Rns \$(yay -Qtdq)"
 
 #
 # Ownership
 #
 
 # list all files that belong to a package
-alias yayown="yay -Ql"
+alias yown="yay -Ql"
 
 # show package(s) owning the specified file
-alias yayblame="yay -Qo"
+alias yblame="yay -Qo"
