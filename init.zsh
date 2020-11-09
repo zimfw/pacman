@@ -127,6 +127,9 @@
   # show package(s) owning the specified file
   alias pacblame="${zpacman_frontend} -Qo"
 
+  #source yay aliases
+  source ${0:h}/yay-aliases.zsh
+
   #
   # Helpers
   #
