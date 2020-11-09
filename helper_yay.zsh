@@ -2,16 +2,11 @@
 # yay aliases
 #
 
-local zyay zyay_priv
-
-zyay='yay'
-zyay_priv='sudo yay'
-
 #
 # General
 #
 
-alias yay=${zyay}
+alias yay=yay
 
 #
 # Build
@@ -27,19 +22,19 @@ alias yayb='makepkg -sci'
 #NOTE: Installing/upgrading individual packages is NOT supported. Sync and upgrade ALL on install.
 
 # install, sync, and upgrade packages
-alias yayi="${zyay_priv} -Syu"
+alias yayi="sudo yay -Syu"
 
 # install packages without syncing
-alias yayI="${zyay_priv} -S"
+alias yayI="sudo yay -S"
 
 # install, sync, and upgrade packages (forcibly refresh package lists)
-alias yayu="${zyay_priv} -Syyu"
+alias yayu="sudo yay -Syyu"
 
 # install packages by filename
-alias yayU="${zyay_priv} -U"
+alias yayU="sudo yay -U"
 
 # install all packages in current directory
-alias yayd="${zyay_priv} -U *.pkg.*"
+alias yayd="sudo yay -U *.pkg.*"
 
 
 #
@@ -47,10 +42,10 @@ alias yayd="${zyay_priv} -U *.pkg.*"
 #
 
 # remove package and unneeded dependencies
-alias yayr="${zyay_priv} -R"
+alias yayr="sudo yay -R"
 
 # remove package, unneeded dependencies, and configuration files
-alias yayrm="${zyay_priv} -Rns"
+alias yayrm="sudo yay -Rns"
 
 
 #
@@ -58,10 +53,10 @@ alias yayrm="${zyay_priv} -Rns"
 #
 
 # query package information from the remote repository
-alias yayq="${zyay} -Si"
+alias yayq="yay -Si"
 
 # query package information from the local repository
-alias yayQ="${zyay} -Qi"
+alias yayQ="yay -Qi"
 
 
 #
@@ -69,10 +64,10 @@ alias yayQ="${zyay} -Qi"
 #
 
 # search for package in the remote repository
-alias yays="${zyay} -Ss"
+alias yays="yay -Ss"
 
 # search for the package in the local repository
-alias yayS="${zyay} -Qs"
+alias yayS="yay -Qs"
 
 
 #
@@ -80,20 +75,20 @@ alias yayS="${zyay} -Qs"
 #
 
 # list orphan packages
-alias yayol="${zyay} -Qdt"
+alias yayol="yay -Qdt"
 
 # remove orphan packages
-alias yayor="${zyay_priv} -Rns \$(yay -Qtdq)"
+alias yayor="sudo yay -Rns \$(yay -Qtdq)"
 
 #
 #Database
 #
 
 #mark packages as explicitly installed
-alias yaypexp="${zyay_priv} -D --asexplicit"
+alias yaypexp="sudo yay -D --asexplicit"
 
 #mark packages as non-explicitly installed or dependency
-alias yaypdep="${zyay_priv} -D --asedps"
+alias yaypdep="sudo yay -D --asedps"
 
 
 #
@@ -101,7 +96,7 @@ alias yaypdep="${zyay_priv} -D --asedps"
 #
 
 # list all files that belong to a package
-alias yayown="${zyay} -Ql"
+alias yayown="yay -Ql"
 
 # show package(s) owning the specified file
-alias yayblame="${zyay} -Qo"
+alias yayblame="yay -Qo"
