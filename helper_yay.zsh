@@ -123,3 +123,4 @@
 
     # show package(s) owning the specified file
     alias yayblame="${zyay_frontend} -Qo"
+}
