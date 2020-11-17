@@ -81,14 +81,14 @@ Aliases
 
 ### General
 
-  * `yconf` print current yay configuration.
+  * `yayconf` print current yay configuration.
 
 ### Install
 
-  * `yi` install, sync, and upgrade packages.
-  * `yu` install, sync, and upgrade packages (forcibly refresh package list).
-  * `yU` install packages from pkg file.
-  * `yd` install all packages in current directory.
+  * `yins` install, sync, and upgrade packages.
+  * `yupg` install, sync, and upgrade packages (forcibly refresh package list).
+  * `yinsf` install packages from pkg file.
+  * `yinsdir` install all packages in current directory.
 
 ### Remove
 
@@ -97,8 +97,8 @@ Aliases
 
 ### Query
 
-  * `yq` query package information from remote repository
-  * `yQ` query package information from local repository
+  * `yqry` query package information from remote repository
+  * `yQry` query package information from local repository
 
 ### Search
 
