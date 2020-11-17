@@ -60,7 +60,57 @@ Aliases
   * `pacol` list orphan packages
   * `pacor` remove all orphan packages
 
+### Database
+  * `pacpexp` mark packages as explicitly installed
+  * `pacpdep` mark packages as non-explicitly installed or as dependency
+
 ### Ownership
 
   * `pacown` list all files provided by a given package
   * `pacblame` show package(s) that own a specified file
+
+---
+---
+yay-aliases
+======
+
+Adds aliases for the yay AUR helper.
+
+Aliases
+-------
+
+### General
+
+  * `yayconf` print current yay configuration.
+
+### Install
+
+  * `yins` install, sync, and upgrade packages.
+  * `yupg` install, sync, and upgrade packages (forcibly refresh package list).
+  * `yinsf` install packages from pkg file.
+  * `yinsdir` install all packages in current directory.
+
+### Remove
+
+  * `yr` remove package and unneeded dependencies.
+  * `yrm` remove package, unneded dependencies, and configuration files.
+
+### Query
+
+  * `yqry` query package information from remote repository
+  * `yQry` query package information from local repository
+
+### Search
+
+  * `ys` search for package in the remote repository
+  * `yS` search for package in the local repository
+
+### Orphans
+
+  * `yol` list orphan packages
+  * `yor` remove all orphan packages
+
+### Ownership
+
+  * `yown` list all files provided by a given package
+  * `yblame` show package(s) that own a specified file

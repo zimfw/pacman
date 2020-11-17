@@ -106,6 +106,16 @@
   # remove orphan packages
   alias pacor="${zpacman_frontend_priv} -Rns \$(pacman -Qtdq)"
 
+  #
+  #Database
+  #
+
+  #mark packages as explicitly installed
+  alias pacpexp="${zpacman_frontend_priv} -D --asexplicit"
+
+  #mark packages as non-explicitly installed or dependency
+  alias pacpdep="${zpacman_frontend_priv} -D --asedps"
+
 
   #
   # Ownership
@@ -116,6 +126,9 @@
 
   # show package(s) owning the specified file
   alias pacblame="${zpacman_frontend} -Qo"
+
+  #source yay aliases
+  source .zim/modules/pacman/yay-aliases.zsh
 
   #
   # Helpers
