@@ -7,7 +7,7 @@
 #
 
 # Print current yay configuration
-alias yconf="yay -Pg"
+alias yayconf="yay -Pg"
 
 #
 # Install
@@ -16,19 +16,19 @@ alias yconf="yay -Pg"
 #NOTE: Installing/upgrading individual packages is NOT supported. Sync and upgrade ALL on install.
 
 # install, sync, and upgrade packages
-alias yi="yay -Syu"
+alias yins="yay -Syu"
 
 # install packages without syncing
-alias yI="yay -S"
+alias yIns="yay -S"
 
 # install, sync, and upgrade packages (forcibly refresh package lists)
-alias yu="yay -Syyu"
+alias yupg="yay -Syyu"
 
 # install packages by filename
-alias yU="yay -U"
+alias yinsf="yay -U"
 
 # install all packages in current directory
-alias yd="yay -U *.pkg.*"
+alias yinsdir="yay -U *.pkg.*"
 
 
 #
