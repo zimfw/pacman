@@ -47,10 +47,10 @@ alias yrm="yay -Rns"
 #
 
 # query package information from the remote repository
-alias yq="yay -Si"
+alias yqry="yay -Si"
 
 # query package information from the local repository
-alias yQ="yay -Qi"
+alias yQry="yay -Qi"
 
 
 #
