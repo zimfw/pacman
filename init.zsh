@@ -13,13 +13,11 @@ if (( ! ${+commands[pacman]} )); then
   return 1
 fi
 
-local zpacman_frontend zpacman_frontend_priv helper
-
 if ! zstyle -s ':zim:pacman' frontend 'zpacman_frontend'; then
   zpacman_frontend='pacman'
   zpacman_frontend_priv='sudo pacman'
 elif (( ! ${+commands[${zpacman_frontend}]} )); then
-  print "pacman frontend \"${zpacman_frontend}\" is invalid or not installed. Reverting to \"pacman\"." >&2
+  print -u2 "pacman frontend \"${zpacman_frontend}\" is invalid or not installed. Reverting to \"pacman\"."
   zpacman_frontend='pacman'
   zpacman_frontend_priv='sudo pacman'
 elif [[ ${zpacman_frontend} == (pacaur|pikaur|yaourt|yay) ]]; then
@@ -124,12 +122,14 @@ alias pacblame="${zpacman_frontend} -Qo"
 #
 
 # source helper functions/aliases
-local -a zpacman_helpers
 zstyle -a ':zim:pacman' helpers 'zpacman_helpers'
-for helper in ${zpacman_helpers}; do
-  if [[ -s ${0:h}/helper_${helper}.zsh ]]; then
-    source ${0:h}/helper_${helper}.zsh
+for zpacman_helper in ${zpacman_helpers}; do
+  if [[ -s ${0:h}/helper_${zpacman_helper}.zsh ]]; then
+    source ${0:h}/helper_${zpacman_helper}.zsh
   else
-    print "no such helper script \"helper_${helper}.zsh\"" >&2
+    print -u2 "no such helper script \"${0:h}/helper_${zpacman_helper}.zsh\""
   fi
 done
+
+# cannot use anon function, with local variables, because we're evaluating ${0}
+unset zpacman_frontend zpacman_frontend_priv zpacman_helper zpacman_helpers
