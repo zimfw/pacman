@@ -26,6 +26,15 @@ provides simple AUR helper aliases.
   * `aurd package_name` clone the package from the AUR, but do not build.
   * `auru` run inside a directory created with `aurb`, this will update, build, and install a package.
 
+### yay
+
+provides yay helper aliases
+
+  * `yayconf` print current yay configuration.
+  * `yayps` print system package statistics.
+  * `yayim <search term>` present package-installation selection menu of the search term.
+
+
 Aliases
 -------
 
@@ -68,49 +77,3 @@ Aliases
 
   * `pacown` list all files provided by a given package
   * `pacblame` show package(s) that own a specified file
-
----
----
-yay-aliases
-======
-
-Adds aliases for the yay AUR helper.
-
-Aliases
--------
-
-### General
-
-  * `yayconf` print current yay configuration.
-
-### Install
-
-  * `yins` install, sync, and upgrade packages.
-  * `yupg` install, sync, and upgrade packages (forcibly refresh package list).
-  * `yinsf` install packages from pkg file.
-  * `yinsdir` install all packages in current directory.
-
-### Remove
-
-  * `yr` remove package and unneeded dependencies.
-  * `yrm` remove package, unneded dependencies, and configuration files.
-
-### Query
-
-  * `yqry` query package information from remote repository
-  * `yQry` query package information from local repository
-
-### Search
-
-  * `ys` search for package in the remote repository
-  * `yS` search for package in the local repository
-
-### Orphans
-
-  * `yol` list orphan packages
-  * `yor` remove all orphan packages
-
-### Ownership
-
-  * `yown` list all files provided by a given package
-  * `yblame` show package(s) that own a specified file
