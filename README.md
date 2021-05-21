@@ -15,6 +15,8 @@ Add any helper scripts to be loaded:
 
     zstyle ':zim:pacman' helpers 'aur'
 
+Add the zstyles to your `~/.zshrc` before where the module is initialized.
+
 Helpers
 -------
 
