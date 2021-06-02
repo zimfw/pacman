@@ -62,6 +62,10 @@ Aliases
   * `pacol` list orphan packages
   * `pacor` remove all orphan packages
 
+### Database
+  * `pacpexp` mark packages as explicitly installed
+  * `pacpdep` mark packages as non-explicitly installed or as dependency
+
 ### Ownership
 
   * `pacown` list all files provided by a given package

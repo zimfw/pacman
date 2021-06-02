@@ -106,6 +106,16 @@ alias pacol="${zpacman_frontend} -Qdt"
 # remove orphan packages
 alias pacor="${zpacman_frontend_priv} -Rns \$(pacman -Qtdq)"
 
+  #
+  #Database
+  #
+
+  #mark packages as explicitly installed
+  alias pacpexp="${zpacman_frontend_priv} -D --asexplicit"
+
+  #mark packages as non-explicitly installed or dependency
+  alias pacpdep="${zpacman_frontend_priv} -D --asedps"
+
 
 #
 # Ownership
