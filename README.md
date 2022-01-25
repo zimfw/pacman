@@ -24,45 +24,25 @@ Helpers
 
 provides simple AUR helper aliases.
 
-  * `aurb package_name` clone the package from the AUR, build, and install.
-  * `aurd package_name` clone the package from the AUR, but do not build.
-  * `auru` run inside a directory created with `aurb`, this will update, build, and install a package.
+  * `aurb` clones the given package name from the AUR, builds, and installs.
+  * `aurd` clones the given package name from the AUR, but does not build.
+  * `auru` from a directory created with `aurb`, will update, build, and install the package.
 
 Aliases
 -------
 
-### Build
-
-  * `pacb` build package in the current directory, cleanup, and install.
-
-### Install
-
-  * `paci` install, sync, and upgrade packages.
-  * `pacu` install, sync, and upgrade packages (forcibly refresh package list).
-  * `pacU` install packages from pkg file.
-  * `pacd` install all packages in current directory.
-
-### Remove
-
-  * `pacr` remove package and unneeded dependencies.
-  * `pacrm` remove package, unneded dependencies, and configuration files.
-
-### Query
-
-  * `pacq` query package information from remote repository
-  * `pacQ` query package information from local repository
-
-### Search
-
-  * `pacs` search for package in the remote repository
-  * `pacS` search for package in the local repository
-
-### Orphans
-
-  * `pacol` list orphan packages
-  * `pacor` remove all orphan packages
-
-### Ownership
-
-  * `pacown` list all files provided by a given package
-  * `pacblame` show package(s) that own a specified file
+  * `pacb` builds package in the current directory, cleanups, and installs.
+  * `paci` installs, syncs, and upgrades packages.
+  * `pacu` installs, syncs, and upgrades packages (forcibly refreshes package list).
+  * `pacU` installs packages from pkg file.
+  * `pacd` installs all packages in current directory.
+  * `pacr` removes package and unneeded dependencies.
+  * `pacrm` removes package, unneeded dependencies, and configuration files.
+  * `pacq` queries package information from remote repository.
+  * `pacQ` queries package information from local repository.
+  * `pacs` searches for package in the remote repository.
+  * `pacS` searches for package in the local repository.
+  * `pacol` lists orphan packages.
+  * `pacor` removes all orphan packages.
+  * `pacown` lists all files provided by a given package.
+  * `pacblame` shows packages that own a specified file.
