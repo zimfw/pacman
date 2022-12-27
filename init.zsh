@@ -13,18 +13,28 @@ if (( ! ${+commands[pacman]} )); then
   return 1
 fi
 
+if ! zstyle -s ':zim:pacman' cmd_priv 'zcmd_priv'; then
+  zcmd_priv='sudo'
+elif [[ ${zcmd_priv} != (sudo|doas) ]]; then
+  print -u2 "Privilege command \"${zcmd_priv}\" is invalid. Reverting to \"sudo\"."
+  zcmd_priv='sudo'
+elif (( ! ${+commands[${zcmd_priv}]} )); then
+  print -u2 "Privilege command \"${zcmd_priv}\" is not installed. Reverting to \"sudo\"."
+  zcmd_priv='sudo'
+fi
+
 if ! zstyle -s ':zim:pacman' frontend 'zpacman_frontend'; then
   zpacman_frontend='pacman'
-  zpacman_frontend_priv='sudo pacman'
+  zpacman_frontend_priv="${zcmd_priv} pacman"
 elif (( ! ${+commands[${zpacman_frontend}]} )); then
   print -u2 "pacman frontend \"${zpacman_frontend}\" is invalid or not installed. Reverting to \"pacman\"."
   zpacman_frontend='pacman'
-  zpacman_frontend_priv='sudo pacman'
+  zpacman_frontend_priv="${zcmd_priv} pacman"
 elif [[ ${zpacman_frontend} == (pacaur|pikaur|yaourt|yay) ]]; then
   # those AUR helpers handle SUID themselves
   zpacman_frontend_priv="${zpacman_frontend}"
 else
-  zpacman_frontend_priv="sudo ${zpacman_frontend}"
+  zpacman_frontend_priv="${zcmd_priv} ${zpacman_frontend}"
 fi
 
 
@@ -132,4 +142,4 @@ for zpacman_helper in ${zpacman_helpers}; do
 done
 
 # cannot use anon function, with local variables, because we're evaluating ${0}
-unset zpacman_frontend zpacman_frontend_priv zpacman_helper zpacman_helpers
+unset zcmd_priv zpacman_frontend zpacman_frontend_priv zpacman_helper zpacman_helpers
