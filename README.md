@@ -7,6 +7,10 @@ Also includes optional helper(s).
 
 Settings
 --------
+Change privilege command between sudo, doas, runas (default: sudo):
+
+    zstyle ':zim:pacman' cmd_priv 'doas'
+
 Set `wrapper_here` to a wrapper if applicable (powerpill, pacmatic, etc):
 
     zstyle ':zim:pacman' frontend 'wrapper_here'
