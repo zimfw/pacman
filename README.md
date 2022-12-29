@@ -7,9 +7,9 @@ Also includes optional helper(s).
 
 Settings
 --------
-Change privilege command between sudo, doas (default: sudo):
+Change command privilege between sudo, doas (default: sudo):
 
-    zstyle ':zim:pacman' cmd_priv 'doas'
+    zstyle ':zim:pacman' priv_cmd 'doas'
 
 Set `wrapper_here` to a wrapper if applicable (powerpill, pacmatic, etc):
 
