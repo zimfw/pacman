@@ -7,7 +7,7 @@ Also includes optional helper(s).
 
 Settings
 --------
-Change command privilege between sudo, doas (default: sudo):
+Change privilege command between sudo, doas (default: sudo):
 
     zstyle ':zim:pacman' priv_cmd 'doas'
 
@@ -20,17 +20,6 @@ Add any helper scripts to be loaded:
     zstyle ':zim:pacman' helpers 'aur'
 
 Add the zstyles to your `~/.zshrc` before where the module is initialized.
-
-Helpers
--------
-
-### aur
-
-provides simple AUR helper aliases.
-
-  * `aurb` clones the given package name from the AUR, builds, and installs.
-  * `aurd` clones the given package name from the AUR, but does not build.
-  * `auru` from a directory created with `aurb`, will update, build, and install the package.
 
 Aliases
 -------
@@ -50,3 +39,14 @@ Aliases
   * `pacor` removes all orphan packages.
   * `pacown` lists all files provided by a given package.
   * `pacblame` shows packages that own a specified file.
+
+Helpers
+-------
+
+### aur
+
+provides simple AUR helper aliases.
+
+  * `aurb` clones the given package name from the AUR, builds, and installs.
+  * `aurd` clones the given package name from the AUR, but does not build.
+  * `auru` from a directory created with `aurb`, will update, build, and install the package.
