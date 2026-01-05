@@ -7,6 +7,7 @@ Also includes optional helper(s).
 
 Settings
 --------
+
 Change privilege command between sudo, doas (default: sudo):
 
     zstyle ':zim:pacman' priv_cmd 'doas'
@@ -19,7 +20,8 @@ Add any helper scripts to be loaded:
 
     zstyle ':zim:pacman' helpers 'aur'
 
-Add the zstyles to your `~/.zshrc` before where the module is initialized.
+Add the zstyles to the beginning of your `~/.zshrc`, before the modules are
+initialized with `source ${ZIM_HOME}/init.zsh`.
 
 Aliases
 -------
