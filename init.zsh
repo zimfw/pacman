@@ -9,9 +9,7 @@
 #
 
 # ensure pacman is available
-if (( ! ${+commands[pacman]} )); then
-  return 1
-fi
+(( ${+commands[pacman]} )) || return 1
 
 if ! zstyle -s ':zim:pacman' priv_cmd 'zpriv_cmd'; then
   zpriv_cmd=sudo

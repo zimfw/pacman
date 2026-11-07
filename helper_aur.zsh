@@ -4,11 +4,19 @@
 
 # download and build AUR package
 aurb() {
+  if (( # != 1 )); then
+    print -u2 "usage: ${0} <package name>"
+    return 2
+  fi
   git clone https://aur.archlinux.org/${1}.git && cd ${1} && makepkg --clean --install --syncdeps
 }
 
 # only download aur package; do not build
 aurd() {
+  if (( # != 1 )); then
+    print -u2 "usage: ${0} <package name>"
+    return 2
+  fi
   git clone https://aur.archlinux.org/${1}.git 
 }
 
